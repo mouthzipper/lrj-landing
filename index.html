@@ -9,9 +9,11 @@
 		<link rel="stylesheet" href="css/text.css">
 		<link rel="stylesheet" href="css/960.css">
 		<link rel="stylesheet" href="css/styles.css">
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 		<title>#LRJ</title>
 	</head>
 	<body>
+		<div class="website-bg-slideshow"></div>
 		<div class="overlay"></div>
 		<div class="container_12 main-content">
 			<div class="grid_12 website-title-row">
@@ -36,5 +38,30 @@
 			</div>
 		</div>
 		<div class="clearfix"></div>
+		<script>
+			$( document ).ready( function () {
+
+				var imagesCount = 8;
+
+				for( var i = 0; i < imagesCount; i++ ) {
+					$( '.website-bg-slideshow' ).append( '<div class="bg-image" id="img-' + i + '" style="display : none; background-image : url( img/img-' + i + '.jpg )" ></div>' );
+				}
+
+				var ctr = 0;
+
+				function loopImages( timeout ) {
+					setTimeout( function () {
+						console.log( ctr )
+						$( '#img-' + ctr ).fadeOut( 'slow', function () {
+							ctr >= imagesCount - 1 ? ctr = 0 : ctr++;
+							$( '#img-' + ctr ).fadeIn( 'slow' );
+						} );
+						loopImages( 7000 );
+					}, timeout );
+				}
+
+				loopImages( 0 );
+			} );
+		</script>
 	</body>
 </html>
