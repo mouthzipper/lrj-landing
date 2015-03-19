@@ -85,7 +85,7 @@ body {
 	font-weight: 400;
 }
 
-.email-reg-submit input[ type="text" ] {
+.email-reg-submit input[ type="email" ] {
 	font-size     : 28px;
 	padding       : 5px 10px;
 	background    : none;
@@ -95,7 +95,7 @@ body {
 	height        : 38px;
 }
 
-.email-reg-submit input[ type="text" ]:hover {
+.email-reg-submit input[ type="email" ]:hover {
 	border     : 1px solid white;
 }
 

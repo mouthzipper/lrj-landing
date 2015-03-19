@@ -48,38 +48,15 @@
 				<h2 class="website-subscribe">Subscribe to our newsletter or contact us at <span class="website-email">lahirajuddotcom@gmail.com</span></h2>
 			</div>
 			<div class="grid_12 container_16">
-				<form class="email-reg-submit grid_10 push_3" type="POST" action="javascript: void 0;">
-					<input type="text" class="grid_7" placeholder="Enter your email">
+				<form class="email-reg-submit grid_10 push_3" type="POST" action="javascript:sendMail();">
+					<input type="email" class="grid_7" placeholder="Enter your email" id="email" required>
 					<input type="submit" class="grid_2" value="Subscribe">
 				</form>
 			</div>
 		</div>
 		<div class="clearfix"></div>
-		<script>
-			$( document ).ready( function () {
-
-				var imagesCount = 10;
-
-				for( var i = 0; i < imagesCount; i++ ) {
-					$( '.website-bg-slideshow' ).append( '<div class="bg-image" id="img-' + i + '" style="display : none; background-image : url( img/img-' + i + '.jpg )" ></div>' );
-				}
-
-				var ctr = 0;
-
-				function loopImages( timeout ) {
-					setTimeout( function () {
-						console.log( ctr )
-						$( '#img-' + ctr ).fadeOut( 'slow', function () {
-							ctr >= imagesCount - 1 ? ctr = 0 : ctr++;
-							$( '#img-' + ctr ).fadeIn( 'slow' );
-						} );
-						loopImages( 7000 );
-					}, timeout );
-				}
-
-				loopImages( 0 );
-			} );
-		</script>
+		<script src="js/slidingImage.js"></script>
+		<script src="js/sendMail.js"></script>
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
